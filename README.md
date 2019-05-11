@@ -23,3 +23,53 @@ Things you may want to cover:
 
 * ...
 # ChatSpace
+# データベース設計
+
+### users　　
+
+|column|type|options|
+|------|----|-------|
+|name|string|null: false, index:true|
+|email|string|null: false, unique: true| 
+
+##### association
+* has_many :group_users
+* has_many :groups, through: :group_users
+* has_many :messages
+
+
+### groups  
+
+|column|type|options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+
+##### association
+* has_many :group_users
+* has_many :users, through: :group_users
+* has_many :messages
+
+
+### group_users
+
+|column|type|options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
+
+##### association
+* belongs_to :user
+* belongs_to :group
+
+
+### messages  
+|column|type|null|
+|------|----|-----|
+|body|text|  |
+|image|string|  |
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
+
+##### association
+* belongs_to :user
+* belongs_to :group
