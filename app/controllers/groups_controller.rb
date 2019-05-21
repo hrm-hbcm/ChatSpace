@@ -19,7 +19,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @users = @group.users.except_current_user(current_user.id)
+    @users = @group.users.except_current_user(current_user)
   end
 
   def update
