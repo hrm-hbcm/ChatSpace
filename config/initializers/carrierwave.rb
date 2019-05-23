@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'hrm-hbcm'
-  config.asset_host = 'https://s3-ここにリージョン名を入れます(※例 ap-northeast-1).amazonaws.com/hrm-hbcm'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/hrm-hbcm'
 end
