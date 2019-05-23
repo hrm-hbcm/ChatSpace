@@ -48,8 +48,10 @@ $('#new_message').on('submit', function(e){
 var reloadMessages = setInterval(function(){
   if (window.location.href.match(/\/groups\/\d+\/messages/)){
   last_message_id = $('.message:last').data('message-id');
+  var group_id = $('.left-header__title').data('group-id');
+  
   $.ajax({
-    url: '/groups/:group_id/api/messages',
+    url: `/groups/${group_id}/api/messages`,
     type: 'get',
     dataType: 'json',
     data: {id: last_message_id}
