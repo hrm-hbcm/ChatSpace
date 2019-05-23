@@ -32,10 +32,16 @@
       margin-top: 28px;
       padding: 0 20px;
     }
+    .right-header__button {
+      a {
+      text-decoration: none;
+      }
+    }
   }
 
   .messages {
     overflow: scroll;
+    overflow-x: hidden;
     background-color: #FAFAFA;
     box-sizing: border-box;
     padding: 46px 40px 0;

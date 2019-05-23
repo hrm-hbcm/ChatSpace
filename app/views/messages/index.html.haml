@@ -13,8 +13,8 @@
             - @group.group_users.each do |group_user|
               = group_user.user.name
       .right-header
-        %a{href: "/groups/#{@group.id}/edit"}
-          .right-header__button
+        .right-header__button
+          %a{href: "/groups/#{@group.id}/edit"}
             Edit
     .messages
       = render @messages
