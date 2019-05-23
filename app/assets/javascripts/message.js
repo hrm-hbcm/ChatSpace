@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load', function() {
 $(function(){
 function buildHTML(message){
   imageHTML = message.image ? `<img src="${message.image}">` : ''
@@ -68,4 +69,5 @@ var reloadMessages = setInterval(function(){
   } else {
     clearInterval(reloadMessages);
   }} , 5000 )
+});
 });
